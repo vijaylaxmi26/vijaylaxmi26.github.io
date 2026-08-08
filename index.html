@@ -486,6 +486,21 @@
     </div>
     <div class="proj-grid reveal">
       <div class="proj-card">
+        <svg class="agent-viz" viewBox="0 0 84 56" aria-hidden="true">
+          <path id="rrtPath" d="M8,48 C26,6 46,54 76,8" fill="none" stroke="var(--green-soft)" stroke-width="2" stroke-linecap="round" style="stroke-dasharray:120;animation:draw 8s infinite;"/>
+          <circle cx="8" cy="48" r="3" fill="var(--muted)"/>
+          <circle cx="76" cy="8" r="3" fill="var(--yellow)"/>
+          <circle r="3" fill="var(--yellow)">
+            <animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.4;0.58;1" calcMode="linear">
+              <mpath xlink:href="#rrtPath"/>
+            </animateMotion>
+          </circle>
+        </svg>
+        <h3>Kinodynamic RRT* — quadrotor trajectory planner</h3>
+        <p>A from-scratch C++17 motion planner for a double-integrator quadrotor: a closed-form optimal boundary-value solution (depressed-quartic arrival time) serves as both the steering function and the RRT* cost metric, with choose-parent/rewiring for asymptotic optimality — success rate climbs from 15% to 100% and mean path cost drops from 26.9 to 24.5 as the iteration budget grows, producing dynamically feasible curved 3D trajectories through obstacle fields. Ships with an interactive Dear ImGui/raylib editor with background-thread replanning, a headless OpenCV renderer for CI, 27 GoogleTest unit tests, and a GitHub Actions matrix across GCC/Clang.</p>
+        <span class="proj-tech">C++17 · CMake · Eigen3 · Dear ImGui · raylib · OpenCV · GoogleTest · GitHub Actions</span>
+      </div>
+      <div class="proj-card">
         <svg class="agent-viz" viewBox="0 0 64 56" aria-hidden="true">
           <line class="node-line" x1="10" y1="10" x2="32" y2="28"/>
           <line class="node-line" x1="54" y1="10" x2="32" y2="28"/>
